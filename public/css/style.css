@@ -1,0 +1,260 @@
+:root{
+    --primary-color: #047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    width: 100%;
+    background: var(--primary-color);
+    height: 80px;
+}
+
+.wrapper{
+    width: 1050px;
+    /* margin: 0 auto; */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: auto;
+    padding-top: 15px;
+}
+
+#site-name{
+    font-size: 2.5rem;
+    /* font-size: xx-large; */
+    font-weight: bold;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links li{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0 15px;
+    list-style: none;
+}
+
+.link-items a{
+    text-decoration: none;
+}
+
+/* General Info Section */
+#general-info{
+    background-color: var(--light-color);
+    height: auto;
+}
+
+
+#general-info h2{
+    color: var(--secondary-color);
+    font-size: 30px;
+}
+
+#general-info h4{
+    color: var(--secondary-color);
+    font-size: 15px;
+}
+
+/* Select Options Section */
+#select-options{
+    background-color: var(--primary-color);
+}
+
+/* .card{
+    color: #fff;
+    border: 1px rgb(0, 0, 0) solid;
+    border-radius: 5px;
+    background-color: grey;
+    font: 250;
+    padding: 8px;
+    margin: 15px ;
+} */
+
+/* .card h3{
+    margin: auto;
+} */
+
+/* Grid for options */
+.grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    /* grid-template-rows: repeat(4, 1fr); */
+    grid-template-rows: repeat;
+    column-gap: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card a{
+    text-decoration: none;
+}
+
+#option-1{
+    grid-column: 1/span 2;
+    /* grid-row: 1/span3; */
+}
+
+#option-2{
+    grid-column: 2/span 3;
+    /* gri; */
+}
+
+#option-3{
+    grid-column: 1/span3;
+}
+
+
+#option-1:hover, 
+#option-2:hover, 
+#option-3:hover{
+    transform: scale(0.9);
+}
+
+
+/* ////////////// About US */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2em 2em;
+    text-align: center;
+}
+
+.column{
+    width: 20%;
+    padding: 0.5em 0;
+}
+
+.person{
+    box-shadow: 0 0 1em var(--secondary-color);
+    padding: 3.5em 1em;
+    border-radius: 0.6em;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+
+.person .image_container{
+    width: 8em;
+    height: 8em;
+    background-color: var(--primary-color);
+    padding: 0em;
+    border-radius: 50%;
+    margin: 0 auto 2em auto;
+}
+
+.person img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.person h3{
+    font-weight: 500;
+}
+
+.person p{
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0.5em 0 2
+}
+
+.person :hover{
+    color: var(--primary-color);
+    transition: 0.3s;
+}
+
+
+/* Chart.js Canvas */
+#myChart{
+    height: 700px;
+}
+
+.attributes{
+    width: 100%;
+}
+
+.attributes-grid{
+    padding: 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+.attributes-grid li{
+    padding: auto;;
+}
+
+.attributes-grid li span{
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* ///////////////// Footer Part //////////////////// */
+.footer{
+    background: var(--primary-color);
+    height: auto;
+    color: var(--light-color);
+}
+
+.grid-3{
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+}
+
+.list-item{
+    /* list-style: none; */
+    padding-bottom: 10px;
+}
+
+.list-item a{
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+.social a{
+    color: var(--light-color);
+    padding: 5px;
+}
+
+/* /////////////////////////// Query 1 ///////////////// */
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-2{
+    color: #333;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px;
+}
+
+#submit-btn{
+    display: block;
+    padding: 3px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}

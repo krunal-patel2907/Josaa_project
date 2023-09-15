@@ -1,0 +1,76 @@
+<%- include('../includes/head.ejs') %>
+<%- include('../includes/nav.ejs') %>
+
+<div class="container">
+    <div class="card">
+        <ul class="attributes-grid">
+            <li class="list-items"><span class="heading">Program: </span><%= program %></li>
+            <li class="list-items"><span class="heading">Round: </span><%= round %></li>
+            <li class="list-items"><span class="heading">Seat Type: </span><%= seatType %></li>
+        </ul>
+    </div>
+    <canvas id="myChart"></canvas>
+</div>
+
+<%- include('../includes/footer.ejs') %>
+
+<script>
+    const years = <%= JSON.stringify(years) %>;
+    const institutes = <%= JSON.stringify(institutes) %>;
+    const avg_opening_rank = <%= JSON.stringify(avg_opening_rank) %>;
+    const avg_closing_rank = <%= JSON.stringify(avg_closing_rank) %>;
+
+    console.log(years, institutes, avg_opening_rank, avg_opening_rank);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    const queryChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: years,
+            datasets: institutes.map((institute, index) => ({
+                label: institute,
+                data: avg_closing_rank.map((_, i) => ({
+                    x: years[i],
+                    y: avg_opening_rank[i],
+                    max: avg_closing_rank[i]
+                })),
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Customize as needed
+                borderColor: 'rgba(75, 192, 192, 1)', // Customize as needed
+                borderWidth: 1,
+                stack: 'stack' + index
+            }))
+        },
+        options: {
+            scales: {
+                x: {
+                    type: 'category',
+                    labels: years
+                },
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            const data = context.dataset.data[context.dataIndex];
+                            return `Avg Opening Rank: ${data.y}, Avg Closing Rank: ${data.max}`;
+                        }
+                    }
+                }
+            }
+            // Customize other chart options here
+        }
+    });
+</script>
+</body>
+</html>

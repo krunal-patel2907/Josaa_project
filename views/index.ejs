@@ -1,0 +1,34 @@
+<%- include('./includes/head.ejs') %>
+<%- include('./includes/nav.ejs') %>
+
+<section id="general-info">
+    <div class="container container-md container-sm pt-3 pb-3 text-secondary">
+        <h2>JOSAA Analysis Portal</h2>
+        <h3>Analysis portal for JEE Councelling which helps you in choosing best IIT for your future!</h3>
+    </div>
+</section>
+<section id="select-options">
+    <div class="container container-md container-sm grid">
+        <div class="card text-secondary" id="option-1">
+            <a href="/query1">
+                <h3>Institute Wise Opening and Closing Rank <i class="fa-solid fa-arrow-right"></i></h3>
+            </a>
+        </div>
+        <div class="card text-secondary" id="option-2">
+            <a href="/query2">
+                <h3>Institute Wise Cut-off Trends <i class="fa-solid fa-arrow-right"></i></h3>
+            </a>
+        </div>
+        <div class="card text-secondary" id="option-3">
+            <a href="/query3">
+                <h3>Round Wise Cut-off Trends <i class="fa-solid fa-arrow-right"></i></h3>
+            </a>
+        </div>
+    </div>
+</section>
+
+<%- include('./includes/footer.ejs') %>
+
+
+</body>
+</html>

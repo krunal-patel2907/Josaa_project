@@ -1,0 +1,26 @@
+{
+  "name": "josaa-project",
+  "version": "1.0.0",
+  "description": "This is a web app, in which after running some queries, we can get graphs of the JOSAA Analysis.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "keywords": [
+    "JOSAA"
+  ],
+  "author": "KJK",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "chart.js": "^4.3.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

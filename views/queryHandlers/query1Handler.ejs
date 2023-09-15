@@ -1,0 +1,84 @@
+<%- include('../includes/head.ejs') %>
+<%- include('../includes/nav.ejs') %>
+
+<div class="container">
+    <div class="card">
+        <ul class="attributes-grid">
+            <li class="list-items"><span class="heading">Institute: </span><%= institute %></li>
+            <li class="list-items"><span class="heading">Program: </span><%= program %></li>
+            <li class="list-items"><span class="heading">Round: </span><%= round %></li>
+            <li class="list-items"><span class="heading">Seat Type: </span><%= seatType %></li>
+        </ul>
+    </div>
+    <canvas id="myChart"></canvas>
+</div>
+
+<%- include('../includes/footer.ejs') %>
+
+<script>
+    const years = <%= JSON.stringify(years) %>;
+    const openingRank = <%= JSON.stringify(opening_rank) %>;
+    const closingRank = <%= JSON.stringify(closing_rank) %>;
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    const queryChart = new Chart(ctx, {
+        type: 'bar', // Use 'bar' chart type
+        data: {
+            labels: years,
+            datasets: [
+            {
+                    label: 'Opening Rank',
+                    data: openingRank,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Customize as needed
+                    borderColor: 'rgba(75, 192, 192, 1)', // Customize as needed
+                    borderWidth: 1
+                },
+                {
+                    label: 'Closing Rank',
+                    data: closingRank,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)', // Customize as needed
+                    borderColor: 'rgba(255, 99, 132, 1)', // Customize as needed
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                x: {
+                    type: 'category',
+                    labels: years
+                },
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                },
+                title: {
+                    display: true,
+                    text: "Institute Wise Opening and Closing Rank",
+                    fontSize: 50
+                },
+                tooltip: {
+                    enabled: true
+                    // callbacks: {
+                    //     label: function (context) {
+                    //         const data = context.dataset.data[context.dataIndex];
+                    //         return `Opening Rank: ${data.base}, Closing Rank: ${data.base + data.y}`;
+                    //     }
+                    // }
+                }
+            }
+            // Customize other chart options here
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<%- include('../includes/head.ejs') %>
+<%- include('../includes/nav.ejs') %>
+
+<form action="/queryInstitute" method="POST" id="filter-form">
+    <section id="filters">
+        <div class="container flex-column">
+            <div class="card-2">
+                <h3>Select Specialisation:</h3>
+                    <select name="specialisation" id="specialisation-list" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option value="na">Please choose an option</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Computer Science and Engineering">Computer Science & Engineering</option>
+                    <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                    <option value="Chemical Engineering">Chemical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                </select>
+            </div>
+            <div class="card-2">
+                <h3>Select Round:</h3>
+                    <select name="round" id="round-list" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option value="na">Please choose an option</option>
+                    <option value="1">Round 1</option>
+                    <option value="2">Round 2</option>
+                    <option value="3">Round 3</option>
+                    <option value="4">Round 4</option>
+                    <option value="5">Round 5</option>
+                </select>
+            </div>
+            <div class="card-2">
+                <h3>Select Seat Type:</h3>
+                    <select name="seatType" id="seat-type-list" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option value="na">Please choose an option</option>
+                    <option value="OPEN">Open</option>
+                    <option value="OPEN (PwD)">Open PWD</option>
+                    <option value="EWS">EWS</option>
+                    <option value="EWS (PwD)">EWS PWD</option>
+                    <option value="OBC-NCL">OBC NCL</option>
+                    <option value="OBC-NCL (PwD)">OBC NCL PWD</option>
+                    <option value="SC">SC</option>
+                    <option value="SC (PwD)">SC PWD</option>
+                    <option value="ST">ST</option>
+                    <option value="ST (PwD)">ST PWD</option>
+                </select>
+            </div>
+            <div class="m-auto" id="submit-btn">
+                <input type="submit" value="Submit" class="btn btn-primary" id="submitted">
+            </div>
+        </div>
+    </section>
+</form>
+
+<%- include('../includes/footer.ejs') %>
+
+
+</body>
+</html>
